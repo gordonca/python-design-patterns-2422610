@@ -2,8 +2,10 @@ class Borg:
     """Borg pattern making the class attributes global"""
     _shared_data = {} # Attribute dictionary
 
+    '''Looks like this func is not needed
     def __init__(self):
         self.__dict__ = self._shared_data # Make it an attribute dictionary
+    '''
 
         
 class Singleton(Borg): #Inherits from the Borg class
@@ -11,7 +13,8 @@ class Singleton(Borg): #Inherits from the Borg class
     #This essenstially makes the singleton objects an object-oriented global variable
 
     def __init__(self, **kwargs):
-        Borg.__init__(self)
+        # Looks like this is not needed
+        #Borg.__init__(self)
         self._shared_data.update(kwargs) # Update the attribute dictionary by inserting a new key-value pair 
 
     def __str__(self):
