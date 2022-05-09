@@ -36,6 +36,18 @@ class SkyLarkBuilder(Builder):
     def add_engine(self):    
         self.car.engine = "Turbo engine"
 
+class MazdaBuilder(Builder):
+    """Concrete Builder --> provides parts and tools to work on the parts """
+    
+    def add_model(self):
+        self.car.model = "Mazda"
+
+    def add_tires(self):
+        self.car.tires = "20\" tires"
+
+    def add_engine(self):    
+        self.car.engine = "Regular engine"
+
 class Car():
     """Product"""
     def __init__(self):
@@ -46,7 +58,7 @@ class Car():
     def __str__(self):
         return '{} | {} | {}'.format(self.model, self.tires, self.engine)
 
-builder = SkyLarkBuilder()
+builder = MazdaBuilder()
 director = Director(builder)
 director.construct_car()
 car = director.get_car()
