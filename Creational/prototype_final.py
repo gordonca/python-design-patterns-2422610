@@ -32,6 +32,6 @@ c = Car()
 prototype = Prototype()
 prototype.register_object('skylark',c)
 
-c1 = prototype.clone('skylark', color="Black")
+c1 = prototype.clone('skylark', color="Black", options="LE")
 
 print(c1)
